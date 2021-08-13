@@ -246,7 +246,7 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-function get20s(/*Your Code Here*/) {
+function get20s(array, ) {
   /*Your Code Here*/
 }
 
@@ -295,10 +295,17 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
+function lotsOfArt(array) {
+  const paint = [];
+  for(let i = 0; i < array.length; i++){
+    if(array[i].paintings > 99){
+      paint.push(array[i].name);
+    }
+  }
+  return paint;
   /*Your Code Here*/
 }
-
+console.log(lotsOfArt(artists))
 
 /* ***** END OF TASKS ***** */
 
