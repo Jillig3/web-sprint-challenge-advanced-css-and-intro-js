@@ -209,11 +209,11 @@ Practice accessing data above by console.log-ing following items:
 
 //(1) Name of the first artist (0th index) in the array
 
-console.log(artists[0].name);
+// console.log(artists[0].name);
 
 //(2) Bio of the third artist (2nd index) in the array 
 
-console.log(artists[2].bio);
+// console.log(artists[2].bio);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
@@ -221,7 +221,7 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
 
 artists[8].name = 'Vincent Van Gogh';
 
-console.log(artists[8].name);
+// console.log(artists[8].name);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
@@ -235,7 +235,7 @@ function getArtistByIndex(array, index) {
   return `the artist at index ${[index]} is ${array[index].name}`;
 }
 
-console.log(getArtistByIndex(artists, 0));
+// console.log(getArtistByIndex(artists, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -246,18 +246,17 @@ Example born in 1901 and died in 1959 - included -- born in 1889 and died in 192
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 // Hint - Look up the .split() method
 
-function get20s(array) {
-  const twentiethCentury = [];
-  const splits = twentiethCentury.splits(' ', 4)
-  for(let i = 0; i < array.length; i++){
-      if(array[i].years >= 1900 && array[i].years <= 2000){
+function get20s(array){
+    const twentiethCentury = [];
+    for(let i = 0; i < array.length; i++){
+      let mySplit = array[i].years.split(' - ');
+        if(mySplit[0] >= 1900 && mySplit[1] <= 2000){ 
         twentiethCentury.push(array[i].name);
-      }
+    }
     }
   return twentiethCentury;  
-  /*Your Code Here*/
 }
-
+console.log(get20s(artists));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -278,7 +277,7 @@ function removeArtist(array, num1) {
   return (array.length - 1);
  }
 
-console.log(removeArtist(artists, 0));
+// console.log(removeArtist(artists, 0));
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
 1. Receive an array
@@ -299,7 +298,7 @@ function addArtist(array, id, name, years, genre, nationality, bio) {
   array.push({id, name, years, genre, nationality, bio});
   return array;
 }
-console.log(addArtist(artists, 20, 'Jacob Illig', '1992 - current', 'web design', 'United States of America', 'lorem ipsum'));
+// console.log(addArtist(artists, 20, 'Jacob Illig', '1992 - current', 'web design', 'United States of America', 'lorem ipsum'));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -319,7 +318,7 @@ function lotsOfArt(array) {
   return paint;
   /*Your Code Here*/
 }
-console.log(lotsOfArt(artists))
+// console.log(lotsOfArt(artists))
 
 /* ***** END OF TASKS ***** */
 
